@@ -1,0 +1,34 @@
+<%- include('header'); -%>
+
+  <div class="box" id="heading">
+
+    <% if (listTitle.includes('Saturday') || listTitle.includes('Sunday')){ %>
+    <h1 style="color: #774898"><%= listTitle %> ToRestList</h1>
+    <% }else{ %>
+    <h1 style="color: #421b9b"><%= listTitle %> ToGoList</h1>
+    <% } %>
+  </div>
+
+  <!-- <ul> -->
+    <!-- <li>eat</li>
+      <li>sleep</li>
+      <li>study</li>
+      <li>play</li> -->
+    <!-- <li>Food</li> -->
+    <div class="box">
+      <% for(let i=0; i<newListItems.length; i++){ %>
+        <div class="item">
+          <input type="checkbox" name="" value="">
+          <p><%= newListItems[i] %></p>
+        </div>
+        <% } %>
+
+        <form class="item" action="/" method="post">
+          <input type="text" name="newItem" placeholder="New item here" autocomplete="off">
+          <button type="submit" name="workList" value=<%= listTitle %>>+</button>
+        </form>
+    </div>
+
+  <!-- </ul> -->
+
+<%- include('footer'); -%>
